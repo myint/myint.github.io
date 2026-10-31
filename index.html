@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steven Myint</title>
+  <meta name="description" content="Steven Myint is a robotics software engineer at NASA's Jet Propulsion Laboratory and group lead of Robotic Operations and Tools (358T). He led development of SSim, the flight-software-in-the-loop simulation used to check every command sequence sent to Perseverance, writes rover flight software, and drives Perseverance.">
+  <meta name="theme-color" content="#cfb494">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Steven Myint">
+  <meta property="og:description" content="Robotics software engineer at NASA JPL. Flight software and simulation for Mars rovers.">
+  <meta property="og:url" content="https://stevenmyint.com/">
+  <meta property="og:image" content="https://stevenmyint.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="5ca96ef7-3e17-47c3-add0-acd62e5cc61a"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-text">
+      <h1>Steven Myint</h1>
+      <p>Robotics Software Engineer, NASA Jet Propulsion Laboratory</p>
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#publications">Publications</a>
+        <a href="#open-source">Open source</a>
+        <a href="#awards">Awards</a>
+      </nav>
+    </div>
+    <figure class="hero">
+      <picture>
+        <source
+          media="(prefers-reduced-motion: reduce)"
+          srcset="assets/img/perseverance-ingenuity-1280.jpg 1280w,
+                  assets/img/perseverance-ingenuity-1920.jpg 1920w,
+                  assets/img/perseverance-ingenuity-2880.jpg 2880w"
+          sizes="(max-width: 700px) 134vw, 100vw">
+        <!-- Animated WebP is about a quarter the size of the GIF; the GIF is
+             only a fallback for browsers without animated WebP. -->
+        <source
+          type="image/webp"
+          srcset="assets/img/perseverance-ingenuity-1280.webp 1280w,
+                  assets/img/perseverance-ingenuity-1920.webp 1920w,
+                  assets/img/perseverance-ingenuity-2560.webp 2560w,
+                  assets/img/perseverance-ingenuity-3840.webp 3840w"
+          sizes="(max-width: 700px) 134vw, 100vw">
+        <img
+          src="assets/img/perseverance-ingenuity-1920.gif"
+          srcset="assets/img/perseverance-ingenuity-1280.gif 1280w,
+                  assets/img/perseverance-ingenuity-1920.gif 1920w,
+                  assets/img/perseverance-ingenuity-2560.gif 2560w,
+                  assets/img/perseverance-ingenuity-3840.gif 3840w"
+          sizes="(max-width: 700px) 134vw, 100vw"
+          width="3840" height="2160"
+          alt="Perseverance and Ingenuity in Jezero Crater, a few meters apart, with wheel tracks between them.">
+      </picture>
+      <figcaption>
+        Perseverance and Ingenuity, sol 46 (April 6, 2021). Taken by the
+        WATSON camera on the end of the rover's arm.
+        Credit: NASA/JPL-Caltech/MSSS.
+      </figcaption>
+    </figure>
+  </header>
+
+  <main>
+    <section id="about" class="row">
+      <h2>About</h2>
+      <div class="about">
+        <div>
+          <p>
+            I'm a robotics software engineer at JPL and group lead of Robotic Operations
+            and Tools (358T). I've been at the lab since 2007, when I
+            started as a student intern.
+          </p>
+          <p>
+            On Mars 2020 I led development of SSim (Surface Simulation), which
+            runs the rover's flight software against every command sequence
+            before we uplink it to Perseverance, and I used it to fuzz the
+            flight software. I also wrote parts of the rover's flight
+            software, including the module that commands the Ingenuity
+            helicopter. In operations I've been a Helicopter Integration
+            Engineer and, since 2022, a rover driver.
+          </p>
+          <p>
+            Since 2023 I've worked on the rover flight software and simulation
+            for Perseverance's onboard global localization. It runs on a
+            commercial Snapdragon processor in the rover's helicopter base
+            station, so we also had to protect it from radiation in software. I'm now PI of a JPL task to make surface
+            operations cheaper: SpaceWasm, portable global localization,
+            learned navigation, and automated downlink and sequencing tools.
+          </p>
+          <p>
+            Before that I led robotic simulation for InSight, and later was
+            simulation lead for Mars Sample Return and ground software lead
+            for CADRE. Outside JPL I used to develop the Python tools
+            pyflakes and autoflake.
+          </p>
+          <p class="contact">
+            contact [at] stevenmyint [dot] com ·
+            <a href="https://github.com/myint" rel="me">GitHub</a> ·
+            <a href="https://robotics.jpl.nasa.gov/who-we-are/people/steven_myint/">JPL Robotics profile</a>
+          </p>
+        </div>
+        <figure class="portrait">
+          <img src="assets/img/saturn-v.jpg" width="768" height="1024" loading="lazy"
+               alt="Steven Myint under the F-1 engines of a Saturn V first stage.">
+          <figcaption>Under the F-1 engines of a Saturn V.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="work" class="row">
+      <h2>Work</h2>
+      <div>
+        <article class="entry">
+          <p class="when">2026–present</p>
+          <h3>PI, Low-Cost High-Performance Surface Operations for Mars, Moon, and Beyond</h3>
+          <p>
+            A JPL strategic R&amp;TD task to make surface operations cheaper:
+            more autonomy on the vehicle, more automation on the ground, for
+            any mission and not just Mars 2020. Each piece is tested against
+            Mars 2020 data on flight or flight-like hardware.
+          </p>
+          <ul>
+            <li>
+              SpaceWasm: a flight-compliant WebAssembly interpreter, so one
+              autonomy implementation can run sandboxed on different vehicles
+              and flight software. It's integrated into F Prime. Firefly is
+              integrating it, and Moonfall and Skyfall are evaluating it.
+              GitHub featured it in
+              <a href="https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/">Octoverse 2026</a>.
+            </li>
+            <li>
+              Global localization without GPS, extended beyond Perseverance to
+              the Moon and to helicopters. All of the lunar terrain vehicle
+              vendors have said they intend to use it.
+            </li>
+            <li>
+              A traversability model pretrained on about 10,000 Perseverance
+              image/waypoint pairs. Its maps feed the ENav planner, and it runs
+              on the Scarecrow test rover.
+            </li>
+            <li>
+              DownlinkDigest, which writes telemetry summaries from downlink.
+              It could save about two hours per planning cycle.
+            </li>
+            <li>
+              SequenceAgent, which generates, simulates, and validates command
+              sequences. We demonstrated it on Perseverance abrasion planning.
+            </li>
+          </ul>
+          <figure class="shot">
+            <img src="assets/img/work/scarecrow-traversability.jpg" width="1600" height="925" loading="lazy"
+                 alt="Scarecrow test rover on a rocky slope in the JPL Mars Yard. Inset: NavCam image, frozen DINOv2 encoder, transformer, color-coded traversability map.">
+            <figcaption>
+              The traversability model on Scarecrow in the JPL Mars Yard: NavCam image in, traversability map out.
+              From the task summary. NASA/JPL-Caltech.
+            </figcaption>
+          </figure>
+          <p class="links">
+            <a href="https://robotics.jpl.nasa.gov/documents/1054/srtd037-steven-myint.pdf">Task summary (PDF)</a>
+            <a href="https://github.com/nasa/spacewasm">SpaceWasm</a>
+          </p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2020–present</p>
+          <h3>Group Lead, Robotic Operations and Tools (358T)</h3>
+          <p>
+            Robotics section, JPL. The group writes the flight and ground
+            software used to operate robots: flight-software-in-the-loop
+            simulation, sequence validation, 3D visualization, and the RSVP
+            tool suite. Our open-source work includes Hermes, Honeycomb, and
+            SpaceWasm.
+          </p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2023–present</p>
+          <h3>Perseverance Onboard Global Localization</h3>
+          <p>
+            Perseverance's position uncertainty grows as it drives. When it
+            gets too large the rover stops and waits for the ground to
+            relocalize it. Onboard global localization matches NavCam
+            panoramas against a HiRISE orbital map on board instead. Over 264
+            panoramas the error averaged 0.36 m. It runs on the Snapdragon 801
+            in the Helicopter Base Station, the commercial processor that
+            relayed Ingenuity's data, as a co-processor to the rover's RAD750.
+          </p>
+          <ul>
+            <li>
+              Worked on the rover flight software: commands to send
+              arbitrarily large files to the base station, wait on it, and
+              bring results back without making a data product, and to apply
+              the localization result to the rover's pose.
+            </li>
+            <li>
+              Extended SSim with part of the base station's F Prime flight
+              software and a simulated serial link to the rover. It ran the
+              whole rover–base station exchange end to end in under a minute,
+              and was the main testbed for the flight software updates.
+            </li>
+            <li>
+              The Snapdragon isn't radiation hardened. On Mars, weak DRAM bits
+              made redundant runs disagree. We fixed it in software: a memory
+              test, a program that keeps bad pages out of use, CPU throttling,
+              and a rover flight software hot patch that accepts two runs
+              that agree within 10 cm.
+            </li>
+            <li>
+              With Columbia University, worked on software radiation
+              protection for commodity processors in space (HotNets '23,
+              ASPLOS '26). Radshield's version of the localization ran in 26%
+              of the time of the serial, radiation-hardened approach.
+            </li>
+            <li>
+              First closed-loop use was on sol 1762 (February 2, 2026), after a
+              159 m autonomous drive. Position uncertainty went from 8.4 m to
+              1.5 m.
+            </li>
+          </ul>
+          <figure class="shot">
+            <img src="assets/img/work/helicopter-base-station.jpg" width="843" height="521" loading="lazy"
+                 alt="Perseverance on Mars and a lab photo of the open rover body. Blue circle: Helicopter Base Station.">
+            <figcaption>
+              The Helicopter Base Station (circled). Its Snapdragon 801 talks to the rover's RAD750 over a serial link
+              capped at 10 KB/s. From Verma et al., IEEE Aerospace 2024. NASA/JPL-Caltech/MSSS.
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="entry">
+          <p class="when">2015–present</p>
+          <h3>Mars 2020 (Perseverance)</h3>
+          <p class="roles">
+            Simulation Lead (2015–) · Flight Software Developer (2016–) ·
+            Helicopter Integration Engineer · Rover Planner (2022–) ·
+            Mobility Downlink Engineer
+          </p>
+          <ul>
+            <li>
+              Led a team of ten building SSim. SSim takes the command
+              sequences, the onboard state from the latest downlink, terrain
+              maps, and onboard files, and runs the rover's flight software on
+              them. It outputs the event records and the rover's kinematic
+              state history. Every plan is simulated in SSim before uplink.
+              Robotic operations runs about 60 simulations per planning day,
+              about 20 seconds each.
+            </li>
+            <li>
+              Led development of RSVP for Mars 2020. MobSketch shows SSim
+              results next to the planned drive, so rover planners can change
+              drives until uplink lockdown instead of freezing them early as
+              on MER and MSL.
+            </li>
+            <li>
+              Fuzzed the flight software through SSim with AFL and with a
+              Python fuzzer against SSim's web service. Both generate command
+              sequences from the flight command dictionary. They found tens of
+              fatal flight software bugs, which were fixed before we hit them
+              on Mars. Static analysis with commercial, open-source, and
+              in-house tools found hundreds more before integrated testing.
+            </li>
+            <li>
+              Wrote the rover flight software module that commands Ingenuity.
+              In operations I was a Helicopter Integration Engineer, the
+              rover-side role that plans each sol's helicopter commanding and
+              the rover's relay of its data.
+            </li>
+            <li>Wrote a flight software module for rover navigation, and led two other developers writing the PIXL instrument manager.</li>
+            <li>
+              Worked around a hardware camera problem in software. Without the
+              workaround the rover assembly schedule would have slipped about a
+              month.
+            </li>
+            <li>
+              Set up continuous integration for flight software in place of the
+              weekly build. Wrote a build system that built the flight software
+              in minutes instead of an hour.
+            </li>
+          </ul>
+          <figure class="shot">
+            <video src="assets/video/sol1849-drive.mp4" poster="assets/video/sol1849-drive-poster.jpg"
+                   width="960" height="540" controls muted playsinline preload="none"
+                   aria-label="Rover's-eye view of a 50 m Perseverance drive over sand ripples and broken bedrock. Distance counter in the corner."></video>
+            <figcaption>
+              A directed drive I planned through sand ripples on sol 1849 (May 3, 2026). My own 3D reconstruction,
+              from the Navcam stereo pairs taken along the drive, using only public data. Navcam images NASA/JPL-Caltech.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/img/work/mobsketch-ssim-sol555.jpg" width="1518" height="996" loading="lazy"
+                 alt="MobSketch, drive over orbital imagery of ripples. Planned path (magenta) and SSim path (blue) nearly overlap between waypoints. Green keep-in zone, red keep-out zone.">
+            <figcaption>
+              The sol 555 drive in MobSketch. Planned path in magenta, SSim's simulated path in blue, keep-in zones
+              green, keep-out zones red. From Verma et al., IEEE Aerospace 2023. NASA/JPL-Caltech.
+            </figcaption>
+          </figure>
+          <p class="links">
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/flight-projects/mars-2020-rover/rsvp-mars-2020/">RSVP for Mars 2020</a>
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/flight-projects/mars-2020-rover/m2020mobility/">Mobility</a>
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/flight-projects/mars-2020-rover/robot-operations/">Robot operations</a>
+          </p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2023–2025</p>
+          <h3>Mars Sample Return: Simulation Lead and Flight Software Developer</h3>
+          <p>SSim was the main simulation tool for Mars Sample Return operations.</p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2024–2025</p>
+          <h3>CADRE: Ground Software Lead</h3>
+          <p>
+            Ground software for Cooperative Autonomous Distributed Robotic
+            Exploration, a team of small lunar rovers.
+          </p>
+          <p class="links">
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/flight-projects/cooperative-autonomous-distributed-robotic-exploration-cadre/cadre-software/">CADRE software</a>
+          </p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2014–2019</p>
+          <h3>InSight: Robotic Simulation Lead</h3>
+          <ul>
+            <li>
+              Led development of RSVP for InSight's arm, used to plan and check
+              the arm motions that placed the seismometer, heat probe, and wind
+              and thermal shield. Connected InSight flight software to RSVP.
+            </li>
+            <li>Wrote algorithms that scored candidate instrument placement sites by terrain roughness and arm workspace.</li>
+          </ul>
+          <figure class="shot">
+            <img src="assets/img/work/insight-rsvp-seis.jpg" width="975" height="603" loading="lazy"
+                 alt="RSVP HyperDrive, top-down: InSight lander and solar arrays, arm over a terrain mesh, seismometer on the ground with its tether to the deck.">
+            <figcaption>
+              Sequencing the seismometer placement in RSVP HyperDrive. NASA/JPL-Caltech.
+            </figcaption>
+          </figure>
+          <p class="links">
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/flight-projects/insight-mars-lander/rsvp-insight/">RSVP for InSight</a>
+          </p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2007–2014</p>
+          <h3>DARTS Lab and Mars Technology</h3>
+          <p>Student intern in 2007, full time from 2009.</p>
+          <ul>
+            <li>3D visualization for the DARTS simulation tools (Dspace, DspaceOgre), including GPU terrain rendering of planet-scale datasets.</li>
+            <li>Real-time 3D visualization of Curiosity during entry, descent, and landing on landing night.</li>
+            <li>Interfaced MSL flight software with FPGA stereo vision for Mars Rover Fast Traverse and tested it on the Vehicle System Test Bed.</li>
+            <li>Simulation for lunar surface operations, ground vehicles, and the Asteroid Redirect Mission capture testbed.</li>
+          </ul>
+          <figure class="shot">
+            <img src="assets/img/work/darts-terrain-wheel-tracks.jpg" width="640" height="360" loading="lazy"
+                 alt="Simulated rover leaving wheel tracks on rendered Martian terrain.">
+            <figcaption>
+              Wheel tracks drawn on clipmapped terrain as a simulated rover drives. From Myint et al., SMC-IT 2011.
+              NASA/JPL-Caltech.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/img/work/lsos-lunar-electric-rover.jpg" width="468" height="275" loading="lazy"
+                 alt="Lunar Electric Rover, a pressurized cabin on wheels, on cratered lunar terrain.">
+            <figcaption>
+              The Lunar Electric Rover, which I modeled and rendered, in the Lunar Surface Operations Simulator. From Howard et al., IEEE Aerospace 2011.
+              NASA/JPL-Caltech.
+            </figcaption>
+          </figure>
+          <p class="links">
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/flight-projects/mars-science-laboratory/rsvp-msl/">RSVP for MSL</a>
+            <a href="https://robotics.jpl.nasa.gov/what-we-do/research-tasks/mars-rover-fast-traverse/">Mars Rover Fast Traverse</a>
+          </p>
+        </article>
+
+        <article class="entry">
+          <p class="when">2008</p>
+          <h3>B.S. Computer Science, minor in Mathematics</h3>
+          <p>California State Polytechnic University, Pomona.</p>
+        </article>
+
+        <article class="entry">
+          <p class="when">Tools</p>
+          <h3>Languages and Platforms</h3>
+          <p>
+            C++, Python, C, Bash. VxWorks on RAD750, RTEMS on LEON, Linux, macOS.
+            AFL, libFuzzer, AddressSanitizer, UBSan, Coverity, Valgrind.
+            OpenGL, GLSL, OGRE, Coin3D.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="row">
+      <h2>Publications</h2>
+      <div class="pubs">
+        <h3>Submitted</h3>
+        <ol>
+          <li>
+            <a href="https://arxiv.org/pdf/2609.24952">Learning to Drive on Mars: Visual Multimodal Traversability Estimation for Off-World Navigation</a>.
+            D. Chiu, C. Wilson, A. Tumbar, G. S. Sukhatme, <b>S. Myint</b>.
+            Submitted to <i>ICRA 2027</i>.
+          </li>
+        </ol>
+
+        <h3>2026</h3>
+        <ol>
+          <li>
+            <a href="https://dl.acm.org/doi/10.1145/3760250.3762218">Radshield: Software Radiation Protection for Commodity Hardware in Space</a>.
+            H. Wang, <b>S. Myint</b>, V. Verma, Y. Winetraub, J. Yang, A. Cidon.
+            <i>ASPLOS '26</i>, Pittsburgh, PA.
+          </li>
+          <li>
+            <a href="https://robotics.jpl.nasa.gov/media/documents/2026_Global_Localization_Memory_Workaround_IEEE_Aero__final.pdf">A Software-Based Approach to Radiation Mitigation for Planetary Missions</a>.
+            J. Nash, V. Verma, E. Graser, H. Wang, G. Kubiak, M. Maimone, <b>S. Myint</b>, J. Biesiadecki, P. Romano.
+            <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+          </li>
+        </ol>
+
+        <h3>2024</h3>
+        <ol>
+          <li>
+            <a href="https://robotics.jpl.nasa.gov/media/documents/2024_Global_Localization_ICRA.pdf">Censible: A Robust and Practical Global Localization Framework for Planetary Surface Missions</a>.
+            J. Nash, Q. Dwight, L. Saldyt, H. Wang, <b>S. Myint</b>, A. Ansar, V. Verma.
+            <i>ICRA</i>, Yokohama, Japan.
+          </li>
+          <li>
+            <a href="https://robotics.jpl.nasa.gov/media/documents/2024_Global_Localization_IEEE_Aero.pdf">Enabling Long &amp; Precise Drives for the Perseverance Mars Rover via Onboard Global Localization</a>.
+            V. Verma, J. Nash, L. Saldyt, Q. Dwight, H. Wang, <b>S. Myint</b>, J. Biesiadecki, M. Maimone, A. Tumbar, A. Ansar, G. Kubiak, R. Hogg.
+            <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+          </li>
+        </ol>
+
+        <h3>2023</h3>
+        <ol>
+          <li>
+            <a href="https://dl.acm.org/doi/10.1145/3626111.3628199">Mars Attacks!: Software Protection Against Space Radiation</a>.
+            H. Wang, <b>S. Myint</b>, V. Verma, Y. Winetraub, J. Yang, A. Cidon.
+            <i>HotNets '23</i>.
+          </li>
+          <li>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-030-97913-3_21">Robotic Deployment and Installation of Payloads on Planetary Surface</a>.
+            A. Trebi-Ollennu, K. Ali, C. Sorice, W. Kim, <b>S. Myint</b>, O. Khan, P. Bailey, H. Abarca, R. G. Deen, J. Yen, J. N. Maki, G. Lim, N. Udomkesmalee, J. Umland.
+            <i>Handbook of Space Resources</i>, Springer.
+          </li>
+          <li>
+            <a href="https://robotics.jpl.nasa.gov/media/documents/IEEE_AERO_2023_RO_final_230110.pdf">Results from the First Year and a Half of Mars 2020 Robotic Operations</a>.
+            V. Verma, M. Maimone, E. Graser, A. Rankin, K. Kaplan, <b>S. Myint</b>, J. Huang, A. Chung, K. Davis, A. Tumbar, I. Tirona, M. Lashore.
+            <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+          </li>
+        </ol>
+
+        <h3>2022</h3>
+        <ol>
+          <li>
+            <a href="https://robotics.jpl.nasa.gov/media/documents/ro_final_v1.pdf">First 210 Solar Days of Mars Perseverance Robotic Operations: Mobility, Robotic Arm, Sampling, and Helicopter</a>.
+            V. Verma, F. Hartman, A. Rankin, M. Maimone, T. Del Sesto, O. Toupet, E. Graser, <b>S. Myint</b>, K. Davis, D. Klein, J. Koch, S. Brooks, P. Bailey, H. Justice, M. Dolci, H. Ono.
+            <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+          </li>
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/9843794">Testing Mars 2020 Flight Software and Hardware in the Surface System Development Environment</a>.
+            S. Brooks, T. Litwin, J. Biesiadecki, N. Abcouwer, T. Del Sesto, M. McHenry, <b>S. Myint</b>, P. Twu, D. Wai.
+            <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+          </li>
+        </ol>
+
+        <h3>2018</h3>
+        <ol>
+          <li>
+            <a href="https://doi.org/10.1007/s11214-018-0520-7">InSight Mars Lander Robotics Instrument Deployment System</a>.
+            A. Trebi-Ollennu, W. Kim, K. Ali, et al. (incl. <b>S. Myint</b>).
+            <i>Space Science Reviews</i>.
+          </li>
+        </ol>
+
+        <details class="earlier">
+          <summary>2015 and earlier</summary>
+
+          <h3>2015</h3>
+          <ol>
+            <li>
+              <a href="https://robotics.jpl.nasa.gov/media/documents/AsteroidCaptureOptionASpace2015.pdf">Testbed for Studying the Capture of a Small, Free-Flying Asteroid in Space</a>.
+              B. Wilcox, M. San Martin, L. Giersch, S. Howe, H. F. Grip, R. Nayeri, T. Litwin, J. Carlson, M. Shekels, A. Jain, C. Lim, <b>S. Myint</b>, J. Dunkle, A. Sirota, C. Fuller.
+              <i>AIAA SPACE 2015</i>.
+            </li>
+          </ol>
+
+          <h3>2014</h3>
+          <ol>
+            <li>
+              Vehicle Dynamics Models for Onboard Motion Planning.
+              R. Mukherjee, T. Howard, <b>S. Myint</b>, J. Chang, J. Craft.
+              <i>ASME IDETC</i>, DETC2014-34831.
+            </li>
+            <li>
+              M3TK: A Robot Mobility and Manipulation Modeling Toolkit.
+              R. Mukherjee, <b>S. Myint</b>, J. Chang, I. Kim, J. Craft, M. Pomerantz, J. Kim, L. Peterson.
+              <i>ASME IDETC</i>, DETC2014-34832.
+            </li>
+            <li>
+              Modeling and Simulation of Asteroid Retrieval Using a Flexible Capture Mechanism.
+              H. F. Grip, M. Ono, J. Balaram, J. Cameron, A. Jain, C. Kuo, <b>S. Myint</b>, M. Quadrelli.
+              <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+            </li>
+          </ol>
+
+          <h3>2013</h3>
+          <ol>
+            <li>
+              Real-Time and High-Fidelity Simulation Environment for Autonomous Ground Vehicle Dynamics.
+              J. Cameron, <b>S. Myint</b>, C. Kuo, A. Jain, H. F. Grip, P. Jayakumar, J. Overholt.
+              <i>NDIA Ground Vehicle Systems Engineering and Technology Symposium</i>, Troy, MI.
+            </li>
+          </ol>
+
+          <h3>2012</h3>
+          <ol>
+            <li>
+              <a href="https://www.techbriefs.com/component/content/article/13877">DspaceOgreTerrain 3D Terrain Visualization Tool</a>.
+              <b>S. Myint</b>, A. Jain, M. Pomerantz.
+              <i>NASA Tech Briefs</i>.
+            </li>
+            <li>
+              End-to-End Dexterous Manipulation with Deliberate Interactive Estimation.
+              N. Hudson, T. Howard, J. Ma, A. Jain, M. Bajracharya, <b>S. Myint</b>, C. Kuo, L. Matthies, P. Backes, P. Hebert, T. Fuchs, J. Burdick.
+              <i>ICRA</i>.
+            </li>
+          </ol>
+
+          <h3>2011</h3>
+          <ol>
+            <li>
+              <a href="https://www.techbriefs.com/component/content/article/10735">DspaceOgre 3D Graphics Visualization Tool</a>.
+              A. Jain, <b>S. Myint</b>, M. Pomerantz.
+              <i>NASA Tech Briefs</i>.
+            </li>
+            <li>
+              <a href="https://doi.org/10.1109/SMC-IT.2011.11">Large Terrain Modeling and Visualization for Planets</a>.
+              <b>S. Myint</b>, A. Jain, J. Cameron, C. Lim.
+              <i>IEEE SMC-IT</i>, San Francisco, CA.
+            </li>
+            <li>
+              A KML Interface for Dynamic Simulation of Robotic Planetary Exploration.
+              T. Howard, J. Cameron, <b>S. Myint</b>, H. Nayar, A. Jain.
+              <i>IEEE Aerospace Conference</i>, Big Sky, MT.
+            </li>
+          </ol>
+
+          <h3>2010</h3>
+          <ol>
+            <li>
+              Surface Operations Analysis for Lunar Missions.
+              H. Nayar, J. Balaram, J. Cameron, M. DiCicco, T. Howard, A. Jain, Y. Kuwata, C. Lim, R. Mukherjee, <b>S. Myint</b>, A. Malkovic, M. Pomerantz, S. Wall.
+              <i>AIAA SPACE 2010</i>.
+            </li>
+          </ol>
+
+          <h3>2009</h3>
+          <ol>
+            <li>
+              Recent Developments on a Simulator for Lunar Surface Operations.
+              H. Nayar, A. Jain, J. Balaram, J. Cameron, C. Lim, R. Mukherjee, M. Pomerantz, L. Reder, <b>S. Myint</b>, N. Serrano, S. Wall.
+              <i>AIAA SPACE 2009</i>.
+            </li>
+            <li>
+              <a href="https://doi.org/10.1109/SMC-IT.2009.36">Dspace: Real-Time 3D Visualization System for Spacecraft Dynamics Simulation</a>.
+              M. Pomerantz, A. Jain, <b>S. Myint</b>.
+              <i>IEEE SMC-IT</i>.
+            </li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <section id="open-source" class="row">
+      <h2>Open source</h2>
+      <div>
+        <p>
+          SpaceWasm and Honeycomb are JPL projects. GitHub featured SpaceWasm
+          in
+          <a href="https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/">Octoverse 2026</a>.
+          I created autoflake and later transferred it to PyCQA to maintain;
+          it still gets about 5 million downloads a month from PyPI. I also
+          used to develop pyflakes.
+        </p>
+        <table class="repos">
+          <thead>
+            <tr><th scope="col">Project</th><th scope="col">What it does</th><th scope="col">Language</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://github.com/nasa/spacewasm">nasa/spacewasm</a></td><td>Flight-compliant WebAssembly interpreter for running code on board spacecraft</td><td>Rust</td></tr>
+            <tr><td><a href="https://github.com/nasa-jpl/honeycomb">nasa-jpl/honeycomb</a></td><td>3D visualization framework for robotics</td><td>TypeScript</td></tr>
+            <tr><td><a href="https://github.com/PyCQA/pyflakes">PyCQA/pyflakes</a></td><td>Checks Python source files for errors</td><td>Python</td></tr>
+            <tr><td><a href="https://github.com/PyCQA/autoflake">PyCQA/autoflake</a></td><td>Removes unused imports and unused variables</td><td>Python</td></tr>
+            <tr><td><a href="https://github.com/myint/perceptualdiff">perceptualdiff</a></td><td>Compares images using a perceptual metric</td><td>C++</td></tr>
+            <tr><td><a href="https://github.com/myint/syntastic-extras">syntastic-extras</a></td><td>Extra syntax checkers for Vim's Syntastic</td><td>Vim script</td></tr>
+          </tbody>
+        </table>
+        <p class="links"><a href="https://github.com/myint?tab=repositories">Everything else on GitHub</a></p>
+      </div>
+    </section>
+
+    <section id="awards" class="row">
+      <h2>Awards</h2>
+      <div>
+        <ul class="awards">
+          <li><span>2026</span> JPL Team Award: developing and launching JPL's Rover Operations Center, for surface operations and use of AI in operations</li>
+          <li><span>2025</span> NASA Group Achievement Award: development, V&amp;V, and delivery of onboard global localization to Perseverance</li>
+          <li><span>2024</span> NASA Group Achievement Award: coordinated Ingenuity and Perseverance operations through low-power winter conditions</li>
+          <li><span>2024</span> NASA Group Achievement Award: Mars 2020 mobility and robotic arm operations processes</li>
+          <li><span>2024</span> NASA Group Achievement Award: Mars 2020 robotic operations processes, through commissioning and record-setting surface operations</li>
+          <li><span>2024</span> NASA Group Achievement Award: commanding Perseverance's mobility and arm systems</li>
+          <li><span>2024</span> NASA Group Achievement Award: R13 flight software for Curiosity's primary computer</li>
+          <li><span>2024</span> JPL Team Award: Ingenuity helicopter campaign, 72 flights on Mars</li>
+          <li><span>2024</span> JPL Voyager Award: improving SSim and its controls in RSVP, including faster execution and flight-like AutoNav timing</li>
+          <li><span>2023</span> NASA Exceptional Public Achievement Medal, for leading development of SSim for validation and verification of all uplink sequences to Perseverance</li>
+          <li><span>2023</span> JPL Explorer Award, for delivering SSim for operating Perseverance on Mars</li>
+          <li><span>2023</span> NASA Group Achievement Award: NASA's first collaborative targeting, automated sequencing, and flight-software-in-the-loop simulation toolset for robotic operations</li>
+          <li><span>2023</span> JPL Team Award: NPM-Direct, which analyzes flight software and generates an NPM-decoding map</li>
+          <li><span>2022</span> JPL Team Award: 5 km of driving in one month during the Mars 2020 Rapid Traverse campaign</li>
+          <li><span>2021</span> JPL Discovery Award: tactical support of SSim through SOX checkout and first-time activities</li>
+          <li><span>2021</span> JPL Team Award: technical leadership in developing SSim</li>
+          <li><span>2021</span> JPL Team Award: Mars 2020 RSVP and SSim for surface robotic operations</li>
+          <li><span>2020</span> JPL Team Award: Mars 2020 cruise, entry, descent, and landing flight software</li>
+        </ul>
+        <details class="earlier">
+          <summary>2010–2019</summary>
+          <ul class="awards">
+            <li><span>2019</span> JPL Voyager Award: simulation and validation capabilities in SSim</li>
+            <li><span>2019</span> NASA Group Achievement Award: InSight Ground Data System</li>
+            <li><span>2019</span> NASA Group Achievement Award: InSight Instrument Deployment System</li>
+            <li><span>2019</span> NASA Group Achievement Award: InSight Wind and Thermal Shield</li>
+            <li><span>2019</span> JPL Team Award: command, simulation, and telemetry tools for the Mars 2020 V&amp;V testbeds</li>
+            <li><span>2018</span> JPL Discovery Award: integration, test, and operations readiness of the InSight IDS</li>
+            <li><span>2017</span> NASA Group Achievement Award: Curiosity surface operations</li>
+            <li><span>2016</span> JPL Team Award: visualization of robot arm target positions and orientations</li>
+            <li><span>2016</span> JPL Discovery Award: leading the Mars 2020 SSim task</li>
+            <li><span>2015</span> JPL Team Award: View Shed capability in RSVP</li>
+            <li><span>2015</span> JPL Team Award: UGV night operations, sensor fusion, and coordinated tactical behaviors</li>
+            <li><span>2013</span> NASA Group Achievement Award: landing of Curiosity at Gale Crater</li>
+            <li><span>2013</span> NASA Group Achievement Award: Curiosity surface mission at Gale Crater</li>
+            <li><span>2013</span> JPL Discovery Award: rendering of an orbiting aerosol cloud simulation for NIAC</li>
+            <li><span>2013</span> JPL Team Award: real-time 3D visualization of MSL during entry, descent, and landing</li>
+            <li><span>2011</span> JPL Team Award: Lunar Sample Return robotics demonstration</li>
+            <li><span>2011</span> NASA Tech Brief Award: DspaceOgreTerrain</li>
+            <li><span>2010</span> NASA Tech Brief Award: DspaceOgre</li>
+            <li><span>2010</span> JPL Mariner Award: multi-gigapixel terrain modeling and visualization software</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Views here are my own, not JPL's, Caltech's, or NASA's.
+      Header image: <a href="https://www.jpl.nasa.gov/images/pia24542-perseverances-selfie-with-ingenuity/">PIA24542</a>, NASA/JPL-Caltech/MSSS.
+    </p>
+  </footer>
+</body>
+</html>

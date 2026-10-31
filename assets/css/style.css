@@ -1,0 +1,308 @@
+/*
+ * Colors are sampled from the header photo (PIA24542): the sky, the
+ * regolith, and the rover's arm.
+ */
+:root {
+  --sky: #cfb494;
+  --paper: #f6f1ea;
+  --ink: #2b2620;
+  --muted: #6d6152;
+  --rule: #ddd2c3;
+  --link: #8a4b2a;
+  --link-underline: #c9a27e;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Charter, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 1rem; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.6 var(--serif);
+  font-variant-numeric: oldstyle-nums;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--link);
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 0.15em;
+}
+a:hover { text-decoration-color: currentColor; }
+
+img, video { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3 { font-weight: normal; margin: 0; }
+
+/* Masthead: the text sits on the same color as the photo's sky, so the
+   photo continues straight up into it. */
+.masthead { background: var(--sky); }
+
+.masthead-text {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 1.5rem;
+}
+
+.masthead h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.masthead-text > p {
+  margin: 0.4rem 0 1.25rem;
+  font-size: 1.15rem;
+}
+
+.masthead nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.4rem;
+}
+
+.masthead nav a {
+  color: var(--ink);
+  text-decoration-color: rgb(43 38 32 / 0.35);
+}
+.masthead nav a:hover { text-decoration-color: var(--ink); }
+
+.hero { margin: 0; background: var(--paper); }
+.hero picture { display: block; }
+
+.hero img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: cover;
+  /* On wide windows the height cap crops the photo. The mast head is about
+     12% from the top, so take most of the crop off the bottom. */
+  object-position: 50% 15%;
+}
+
+.hero figcaption {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .masthead-text { padding-top: 2.25rem; }
+  .hero img {
+    aspect-ratio: 4 / 3;
+    max-height: none;
+    object-position: 64% 60%;
+  }
+}
+
+/* Body: section label on the left, content on the right. */
+main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: 0 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.row:first-child { border-top: 0; }
+
+.row > h2 {
+  font-size: 1.05rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--muted);
+  padding-top: 0.1rem;
+}
+
+@media (max-width: 700px) {
+  .row { grid-template-columns: 1fr; padding: 2rem 0; }
+  .row > h2 { margin-bottom: 1rem; }
+}
+
+p { margin: 0 0 1rem; }
+
+ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+li { margin-bottom: 0.35rem; }
+li::marker { color: var(--muted); }
+
+/* About */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 13rem;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.portrait { margin: 0.35rem 0 0; }
+.portrait img { border: 1px solid var(--rule); }
+.portrait figcaption {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Stack before the portrait squeezes the text column next to the
+   section label. */
+@media (max-width: 900px) {
+  .about { grid-template-columns: 1fr; gap: 1rem; }
+  .portrait { max-width: 13rem; }
+}
+
+/* Work entries: title on the left, dates on the right. */
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.entry:last-child { margin-bottom: 0; }
+.entry > * { grid-column: 1 / -1; }
+.entry h3 {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.entry .when {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  color: var(--muted);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.entry .roles { color: var(--muted); font-style: italic; }
+.entry > :last-child { margin-bottom: 0; }
+
+/* Figures from papers and project pages, inside work entries. */
+.shot { margin: 0.25rem 0 1rem; }
+.shot img, .shot video { border: 1px solid var(--rule); }
+.shot figcaption {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 520px) {
+  .entry { grid-template-columns: 1fr; }
+  .entry .when { grid-column: 1; grid-row: 1; }
+  .entry h3 { grid-row: 2; }
+}
+
+/* Publications */
+.pubs h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  margin: 1.75rem 0 0.5rem;
+}
+.pubs h3:first-child { margin-top: 0; }
+
+.pubs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pubs li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.25rem;
+  text-indent: -1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pubs b { font-weight: 600; }
+
+/* Open source */
+.repos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.repos th {
+  text-align: left;
+  font-weight: normal;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  padding: 0 1rem 0.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.repos td {
+  padding: 0.45rem 1rem 0.45rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.repos td:last-child, .repos th:last-child { padding-right: 0; white-space: nowrap; }
+.repos td:first-child { white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .repos thead { display: none; }
+  .repos tr { display: block; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  .repos td { display: inline; border: 0; padding: 0; }
+  .repos td:nth-child(2) { display: block; }
+  .repos td:last-child { color: var(--muted); }
+  .repos td:last-child::before { content: "· "; }
+}
+
+/* Awards */
+.awards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+.awards li {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  margin-bottom: 0.45rem;
+}
+.awards span {
+  color: var(--muted);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Older publications and awards, collapsed by default. */
+.earlier { margin-top: 1.75rem; }
+.earlier summary {
+  cursor: pointer;
+  color: var(--link);
+  font-size: 0.95rem;
+  font-variant-numeric: lining-nums;
+}
+.earlier[open] summary { margin-bottom: 1rem; }
+.pubs .earlier summary + h3 { margin-top: 0; }
+.awards + .earlier { margin-top: 0.8rem; }
+
+footer {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer p { margin: 0; }
