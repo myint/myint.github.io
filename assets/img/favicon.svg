@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .sky { fill: #f5f4f2; }
+    .ground { fill: #9a4a20; }
+    @media (prefers-color-scheme: dark) {
+      .sky { fill: #2a2826; }
+      .ground { fill: #dc8f62; }
+    }
+  </style>
+  <rect class="sky" width="32" height="32" rx="4"/>
+  <path class="ground" d="M0 19 Q8 16.5 15 18 T32 17.5 V28 a4 4 0 0 1 -4 4 H4 a4 4 0 0 1 -4 -4 Z"/>
+</svg>
